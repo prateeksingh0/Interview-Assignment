@@ -1,0 +1,641 @@
+{
+    "metadata": {
+        "framework": "LLM Evaluation Framework",
+        "version": "1.0",
+        "generated_at": "2026-06-28T23:02:15.943633",
+        "generator_model": "llama3.1:8b",
+        "judge_model": "qwen2.5:7b",
+        "total_cases": 5
+    },
+    "metrics": {
+        "summary": {
+            "total_cases": 5,
+            "pass_rate": 100.0
+        },
+        "comparison": {
+            "wins_a": 5,
+            "wins_b": 0,
+            "ties": 0,
+            "win_rate_a": 100.0,
+            "win_rate_b": 0.0,
+            "average_score_a": 8.0,
+            "average_score_b": 6.2
+        },
+        "criteria": {
+            "Correctness": {
+                "average_score_a": 9.0,
+                "average_score_b": 7.2
+            },
+            "Faithfulness": {
+                "average_score_a": 9.6,
+                "average_score_b": 7.8
+            },
+            "Completeness": {
+                "average_score_a": 8.2,
+                "average_score_b": 7.4
+            },
+            "Instruction Following": {
+                "average_score_a": 10.0,
+                "average_score_b": 7.4
+            },
+            "Tone": {
+                "average_score_a": 10.0,
+                "average_score_b": 9.0
+            },
+            "Safety": {
+                "average_score_a": 10.0,
+                "average_score_b": 10.0
+            }
+        }
+    },
+    "bias_analysis": {
+        "position_bias": {
+            "total_cases": 5,
+            "consistent_cases": 5,
+            "flipped_cases": 0,
+            "flip_rate": 0.0,
+            "results": [
+                {
+                    "original_winner": "A",
+                    "reversed_winner": "A",
+                    "consistent": true,
+                    "flip_rate": 0.0
+                },
+                {
+                    "original_winner": "A",
+                    "reversed_winner": "A",
+                    "consistent": true,
+                    "flip_rate": 0.0
+                },
+                {
+                    "original_winner": "A",
+                    "reversed_winner": "A",
+                    "consistent": true,
+                    "flip_rate": 0.0
+                },
+                {
+                    "original_winner": "A",
+                    "reversed_winner": "A",
+                    "consistent": true,
+                    "flip_rate": 0.0
+                },
+                {
+                    "original_winner": "A",
+                    "reversed_winner": "A",
+                    "consistent": true,
+                    "flip_rate": 0.0
+                }
+            ]
+        },
+        "verbosity_bias": {
+            "total_cases": 5,
+            "longer_answer_wins": 0,
+            "verbosity_bias_rate": 0.0,
+            "results": [
+                {
+                    "winner": "A",
+                    "answer_a_length": 29,
+                    "answer_b_length": 81,
+                    "longer_answer": "B",
+                    "preferred_longer_answer": false,
+                    "length_difference": 52,
+                    "length_ratio": 2.79
+                },
+                {
+                    "winner": "A",
+                    "answer_a_length": 36,
+                    "answer_b_length": 77,
+                    "longer_answer": "B",
+                    "preferred_longer_answer": false,
+                    "length_difference": 41,
+                    "length_ratio": 2.14
+                },
+                {
+                    "winner": "A",
+                    "answer_a_length": 37,
+                    "answer_b_length": 84,
+                    "longer_answer": "B",
+                    "preferred_longer_answer": false,
+                    "length_difference": 47,
+                    "length_ratio": 2.27
+                },
+                {
+                    "winner": "A",
+                    "answer_a_length": 29,
+                    "answer_b_length": 69,
+                    "longer_answer": "B",
+                    "preferred_longer_answer": false,
+                    "length_difference": 40,
+                    "length_ratio": 2.38
+                },
+                {
+                    "winner": "A",
+                    "answer_a_length": 25,
+                    "answer_b_length": 75,
+                    "longer_answer": "B",
+                    "preferred_longer_answer": false,
+                    "length_difference": 50,
+                    "length_ratio": 3.0
+                }
+            ]
+        },
+        "self_enhancement_bias": {
+            "total_cases": 5,
+            "same_family_cases": 0,
+            "risk": "Low",
+            "results": [
+                {
+                    "generator_model": "llama3.1:8b",
+                    "judge_model": "qwen2.5:7b",
+                    "generator_family": "llama",
+                    "judge_family": "qwen",
+                    "same_family": false,
+                    "risk": "Low"
+                },
+                {
+                    "generator_model": "llama3.1:8b",
+                    "judge_model": "qwen2.5:7b",
+                    "generator_family": "llama",
+                    "judge_family": "qwen",
+                    "same_family": false,
+                    "risk": "Low"
+                },
+                {
+                    "generator_model": "llama3.1:8b",
+                    "judge_model": "qwen2.5:7b",
+                    "generator_family": "llama",
+                    "judge_family": "qwen",
+                    "same_family": false,
+                    "risk": "Low"
+                },
+                {
+                    "generator_model": "llama3.1:8b",
+                    "judge_model": "qwen2.5:7b",
+                    "generator_family": "llama",
+                    "judge_family": "qwen",
+                    "same_family": false,
+                    "risk": "Low"
+                },
+                {
+                    "generator_model": "llama3.1:8b",
+                    "judge_model": "qwen2.5:7b",
+                    "generator_family": "llama",
+                    "judge_family": "qwen",
+                    "same_family": false,
+                    "risk": "Low"
+                }
+            ]
+        },
+        "sycophancy_bias": {
+            "total_cases": 5,
+            "fooled_cases": 0,
+            "sycophancy_rate": 0.0,
+            "results": [
+                {
+                    "winner": "A",
+                    "confident_wrong_answer": "B",
+                    "fooled": false
+                },
+                {
+                    "winner": "A",
+                    "confident_wrong_answer": "B",
+                    "fooled": false
+                },
+                {
+                    "winner": "A",
+                    "confident_wrong_answer": "B",
+                    "fooled": false
+                },
+                {
+                    "winner": "A",
+                    "confident_wrong_answer": "B",
+                    "fooled": false
+                },
+                {
+                    "winner": "A",
+                    "confident_wrong_answer": "B",
+                    "fooled": false
+                }
+            ]
+        },
+        "score_clustering": {
+            "total_cases": 5,
+            "result": {
+                "mean": 7.1,
+                "median": 7.5,
+                "minimum": 6.0,
+                "maximum": 8.0,
+                "variance": 0.99,
+                "standard_deviation": 0.99,
+                "clustered": true
+            }
+        }
+    },
+    "judge_validation": {
+        "total_cases": 5,
+        "average_consistency": 100.0,
+        "stable_cases": 5,
+        "results": [
+            {
+                "winners": [
+                    "A",
+                    "A",
+                    "A"
+                ],
+                "consistent_runs": 3,
+                "total_runs": 3,
+                "consistency_rate": 100.0,
+                "stable": true
+            },
+            {
+                "winners": [
+                    "A",
+                    "A",
+                    "A"
+                ],
+                "consistent_runs": 3,
+                "total_runs": 3,
+                "consistency_rate": 100.0,
+                "stable": true
+            },
+            {
+                "winners": [
+                    "A",
+                    "A",
+                    "A"
+                ],
+                "consistent_runs": 3,
+                "total_runs": 3,
+                "consistency_rate": 100.0,
+                "stable": true
+            },
+            {
+                "winners": [
+                    "A",
+                    "A",
+                    "A"
+                ],
+                "consistent_runs": 3,
+                "total_runs": 3,
+                "consistency_rate": 100.0,
+                "stable": true
+            },
+            {
+                "winners": [
+                    "A",
+                    "A",
+                    "A"
+                ],
+                "consistent_runs": 3,
+                "total_runs": 3,
+                "consistency_rate": 100.0,
+                "stable": true
+            }
+        ]
+    },
+    "recommendation": {
+        "judge_reliable": true,
+        "position_bias": "Low",
+        "verbosity_bias": "Low",
+        "self_enhancement": "Low",
+        "sycophancy": "Low",
+        "score_clustering": "Needs Review"
+    },
+    "evaluations": [
+        {
+            "test_case": {
+                "id": 1,
+                "input": "What is Python?",
+                "system_prompt": "Answer in 2-3 sentences.",
+                "expected_output": "Python is a high-level programming language used for web development, AI, automation, and more.",
+                "criteria": null
+            },
+            "answer_a": "Python is a high-level, interpreted programming language that is widely used for web development, scientific computing, data analysis, artificial intelligence, and more due to its simplicity, readability, and versatility.",
+            "answer_b": "Python is a high-level, interpreted programming language that is widely used for various purposes such as web development, scientific computing, data analysis, artificial intelligence, and more. It was created by Guido van Rossum in the late 1980s and has since become one of the most popular programming languages globally due to its simplicity, readability, and ease of use. Python's syntax is designed to be intuitive and easy to learn, making it a great language for beginners as well as experienced developers.",
+            "verdict": {
+                "winner": "A",
+                "overall_score_a": 8.0,
+                "overall_score_b": 6.0,
+                "criteria": [
+                    {
+                        "name": "Correctness",
+                        "score_a": 9.0,
+                        "score_b": 7.0,
+                        "winner": "A",
+                        "rationale": "Answer A correctly states that Python is a high-level, interpreted programming language used for various purposes. Answer B includes additional information about the creator and popularity of Python, which is not directly relevant to the question."
+                    },
+                    {
+                        "name": "Faithfulness",
+                        "score_a": 10.0,
+                        "score_b": 8.0,
+                        "winner": "A",
+                        "rationale": "Answer A closely follows the expected answer provided in the system prompt. Answer B includes extra details about Python's history and popularity, which deviates slightly from the question."
+                    },
+                    {
+                        "name": "Completeness",
+                        "score_a": 8.0,
+                        "score_b": 7.0,
+                        "winner": "A",
+                        "rationale": "Answer A provides a concise yet complete answer. Answer B includes additional information about Python's creator and global popularity, which is not directly asked for in the question."
+                    },
+                    {
+                        "name": "Instruction Following",
+                        "score_a": 10.0,
+                        "score_b": 8.0,
+                        "winner": "A",
+                        "rationale": "Answer A adheres to the instruction of providing a 2-3 sentence answer. Answer B exceeds this by including more details."
+                    },
+                    {
+                        "name": "Tone",
+                        "score_a": 10.0,
+                        "score_b": 9.0,
+                        "winner": "A",
+                        "rationale": "Both answers maintain an impartial and neutral tone, but Answer A is slightly more concise without losing clarity."
+                    },
+                    {
+                        "name": "Safety",
+                        "score_a": 10.0,
+                        "score_b": 10.0,
+                        "winner": "Tie",
+                        "rationale": "Both answers are safe and do not contain any inappropriate or harmful content."
+                    }
+                ],
+                "overall_rationale": "Answer A is more faithful to the instruction, concise, and directly addresses the question without including unnecessary details. Answer B, while informative, includes additional information that slightly deviates from the core of the question."
+            },
+            "judge_call": {
+                "prompt": "You are an impartial AI judge.\n\nYour task is to compare TWO answers.\n\nEvaluate ONLY using the information provided.\n\nDo NOT favor:\n- Longer answers\n- Better writing style\n- More confident wording\n\nFocus only on factual quality and instruction following.\n\nQuestion:\nWhat is Python?\n\nSystem Prompt:\nAnswer in 2-3 sentences.\n\nExpected Answer:\nPython is a high-level programming language used for web development, AI, automation, and more.\n\nAnswer A:\nPython is a high-level, interpreted programming language that is widely used for web development, scientific computing, data analysis, artificial intelligence, and more due to its simplicity, readability, and versatility.\n\nAnswer B:\nPython is a high-level, interpreted programming language that is widely used for various purposes such as web development, scientific computing, data analysis, artificial intelligence, and more. It was created by Guido van Rossum in the late 1980s and has since become one of the most popular programming languages globally due to its simplicity, readability, and ease of use. Python's syntax is designed to be intuitive and easy to learn, making it a great language for beginners as well as experienced developers.\n\nEvaluate using these criteria:\n\n- Correctness\n- Faithfulness\n- Completeness\n- Instruction Following\n- Tone\n- Safety\n\nFor EACH criterion:\n\n- Give score_a (0-10)\n- Give score_b (0-10)\n- Decide winner (A, B, or Tie)\n- Explain the reason briefly\n\nFinally determine:\n\n- overall winner\n- overall_score_a\n- overall_score_b\n- overall_rationale\n\nReturn ONLY valid JSON.\n\nUse EXACTLY this schema:\n\n{\n    \"winner\":\"A\",\n    \"overall_score_a\":0,\n    \"overall_score_b\":0,\n    \"criteria\":[\n        {\n            \"name\":\"Correctness\",\n            \"score_a\":0,\n            \"score_b\":0,\n            \"winner\":\"A\",\n            \"rationale\":\"...\"\n        }\n    ],\n    \"overall_rationale\":\"...\"\n}\n\nRules:\n\n- Do NOT return Markdown.\n- Do NOT wrap JSON inside ``` blocks.\n- Return ONLY JSON.\n- Every criterion must appear exactly once.\n- Scores must be between 0 and 10.",
+                "raw_response": "{\n    \"winner\": \"A\",\n    \"overall_score_a\": 8,\n    \"overall_score_b\": 6,\n    \"criteria\": [\n        {\n            \"name\": \"Correctness\",\n            \"score_a\": 9,\n            \"score_b\": 7,\n            \"winner\": \"A\",\n            \"rationale\": \"Answer A correctly states that Python is a high-level, interpreted programming language used for various purposes. Answer B includes additional information about the creator and popularity of Python, which is not directly relevant to the question.\"\n        },\n        {\n            \"name\": \"Faithfulness\",\n            \"score_a\": 10,\n            \"score_b\": 8,\n            \"winner\": \"A\",\n            \"rationale\": \"Answer A closely follows the expected answer provided in the system prompt. Answer B includes extra details about Python's history and popularity, which deviates slightly from the question.\"\n        },\n        {\n            \"name\": \"Completeness\",\n            \"score_a\": 8,\n            \"score_b\": 7,\n            \"winner\": \"A\",\n            \"rationale\": \"Answer A provides a concise yet complete answer. Answer B includes additional information about Python's creator and global popularity, which is not directly asked for in the question.\"\n        },\n        {\n            \"name\": \"Instruction Following\",\n            \"score_a\": 10,\n            \"score_b\": 8,\n            \"winner\": \"A\",\n            \"rationale\": \"Answer A adheres to the instruction of providing a 2-3 sentence answer. Answer B exceeds this by including more details.\"\n        },\n        {\n            \"name\": \"Tone\",\n            \"score_a\": 10,\n            \"score_b\": 9,\n            \"winner\": \"A\",\n            \"rationale\": \"Both answers maintain an impartial and neutral tone, but Answer A is slightly more concise without losing clarity.\"\n        },\n        {\n            \"name\": \"Safety\",\n            \"score_a\": 10,\n            \"score_b\": 10,\n            \"winner\": \"Tie\",\n            \"rationale\": \"Both answers are safe and do not contain any inappropriate or harmful content.\"\n        }\n    ],\n    \"overall_rationale\": \"Answer A is more faithful to the instruction, concise, and directly addresses the question without including unnecessary details. Answer B, while informative, includes additional information that slightly deviates from the core of the question.\"\n}",
+                "judge_model": "qwen2.5:7b",
+                "timestamp": "2026-06-28T22:49:25.554125"
+            }
+        },
+        {
+            "test_case": {
+                "id": 2,
+                "input": "Explain REST API.",
+                "system_prompt": "Be concise.",
+                "expected_output": "A REST API is an architectural style that enables communication between systems over HTTP using methods such as GET, POST, PUT, and DELETE.",
+                "criteria": null
+            },
+            "answer_a": "A REST (Representational State of Resource) API is an architectural style for designing networked applications, where resources are identified by URIs and manipulated using a fixed set of operations such as GET, POST, PUT, and DELETE.",
+            "answer_b": "A REST (Representational State of Resource) API is an architectural style for designing networked applications, where resources are identified by URIs and manipulated using a fixed set of operations. It allows for stateless communication between client and server, where each request contains all the information necessary to complete the request, without relying on context stored on the server. This approach enables scalability, flexibility, and simplicity in building web services that can be easily integrated with other applications.",
+            "verdict": {
+                "winner": "A",
+                "overall_score_a": 8.0,
+                "overall_score_b": 6.0,
+                "criteria": [
+                    {
+                        "name": "Correctness",
+                        "score_a": 9.0,
+                        "score_b": 7.0,
+                        "winner": "A",
+                        "rationale": "Answer A correctly defines REST API without unnecessary details, while Answer B includes an additional but not strictly necessary detail about statelessness."
+                    },
+                    {
+                        "name": "Faithfulness",
+                        "score_a": 10.0,
+                        "score_b": 8.0,
+                        "winner": "A",
+                        "rationale": "Answer A closely follows the provided question, while Answer B includes extra information that slightly deviates from the core definition."
+                    },
+                    {
+                        "name": "Completeness",
+                        "score_a": 9.0,
+                        "score_b": 7.0,
+                        "winner": "A",
+                        "rationale": "Both answers are concise and complete, but Answer A is more direct in its explanation without extraneous information."
+                    },
+                    {
+                        "name": "Instruction Following",
+                        "score_a": 10.0,
+                        "score_b": 8.0,
+                        "winner": "A",
+                        "rationale": "Answer A adheres strictly to the system prompt of being concise, while Answer B provides more detail than necessary."
+                    },
+                    {
+                        "name": "Tone",
+                        "score_a": 10.0,
+                        "score_b": 9.0,
+                        "winner": "B",
+                        "rationale": "Both answers maintain a neutral tone, but Answer B uses slightly more formal language."
+                    },
+                    {
+                        "name": "Safety",
+                        "score_a": 10.0,
+                        "score_b": 10.0,
+                        "winner": "Tie",
+                        "rationale": "Both answers are safe and do not contain any inappropriate content."
+                    }
+                ],
+                "overall_rationale": "Answer A is more concise, faithful to the question, complete in its explanation, and strictly follows the instruction. While Answer B provides a slightly more detailed definition, it includes information that was not requested, making it less ideal for this specific task."
+            },
+            "judge_call": {
+                "prompt": "You are an impartial AI judge.\n\nYour task is to compare TWO answers.\n\nEvaluate ONLY using the information provided.\n\nDo NOT favor:\n- Longer answers\n- Better writing style\n- More confident wording\n\nFocus only on factual quality and instruction following.\n\nQuestion:\nExplain REST API.\n\nSystem Prompt:\nBe concise.\n\nExpected Answer:\nA REST API is an architectural style that enables communication between systems over HTTP using methods such as GET, POST, PUT, and DELETE.\n\nAnswer A:\nA REST (Representational State of Resource) API is an architectural style for designing networked applications, where resources are identified by URIs and manipulated using a fixed set of operations such as GET, POST, PUT, and DELETE.\n\nAnswer B:\nA REST (Representational State of Resource) API is an architectural style for designing networked applications, where resources are identified by URIs and manipulated using a fixed set of operations. It allows for stateless communication between client and server, where each request contains all the information necessary to complete the request, without relying on context stored on the server. This approach enables scalability, flexibility, and simplicity in building web services that can be easily integrated with other applications.\n\nEvaluate using these criteria:\n\n- Correctness\n- Faithfulness\n- Completeness\n- Instruction Following\n- Tone\n- Safety\n\nFor EACH criterion:\n\n- Give score_a (0-10)\n- Give score_b (0-10)\n- Decide winner (A, B, or Tie)\n- Explain the reason briefly\n\nFinally determine:\n\n- overall winner\n- overall_score_a\n- overall_score_b\n- overall_rationale\n\nReturn ONLY valid JSON.\n\nUse EXACTLY this schema:\n\n{\n    \"winner\":\"A\",\n    \"overall_score_a\":0,\n    \"overall_score_b\":0,\n    \"criteria\":[\n        {\n            \"name\":\"Correctness\",\n            \"score_a\":0,\n            \"score_b\":0,\n            \"winner\":\"A\",\n            \"rationale\":\"...\"\n        }\n    ],\n    \"overall_rationale\":\"...\"\n}\n\nRules:\n\n- Do NOT return Markdown.\n- Do NOT wrap JSON inside ``` blocks.\n- Return ONLY JSON.\n- Every criterion must appear exactly once.\n- Scores must be between 0 and 10.",
+                "raw_response": "{\n    \"winner\": \"A\",\n    \"overall_score_a\": 8,\n    \"overall_score_b\": 6,\n    \"criteria\": [\n        {\n            \"name\": \"Correctness\",\n            \"score_a\": 9,\n            \"score_b\": 7,\n            \"winner\": \"A\",\n            \"rationale\": \"Answer A correctly defines REST API without unnecessary details, while Answer B includes an additional but not strictly necessary detail about statelessness.\"\n        },\n        {\n            \"name\": \"Faithfulness\",\n            \"score_a\": 10,\n            \"score_b\": 8,\n            \"winner\": \"A\",\n            \"rationale\": \"Answer A closely follows the provided question, while Answer B includes extra information that slightly deviates from the core definition.\"\n        },\n        {\n            \"name\": \"Completeness\",\n            \"score_a\": 9,\n            \"score_b\": 7,\n            \"winner\": \"A\",\n            \"rationale\": \"Both answers are concise and complete, but Answer A is more direct in its explanation without extraneous information.\"\n        },\n        {\n            \"name\": \"Instruction Following\",\n            \"score_a\": 10,\n            \"score_b\": 8,\n            \"winner\": \"A\",\n            \"rationale\": \"Answer A adheres strictly to the system prompt of being concise, while Answer B provides more detail than necessary.\"\n        },\n        {\n            \"name\": \"Tone\",\n            \"score_a\": 10,\n            \"score_b\": 9,\n            \"winner\": \"B\",\n            \"rationale\": \"Both answers maintain a neutral tone, but Answer B uses slightly more formal language.\"\n        },\n        {\n            \"name\": \"Safety\",\n            \"score_a\": 10,\n            \"score_b\": 10,\n            \"winner\": \"Tie\",\n            \"rationale\": \"Both answers are safe and do not contain any inappropriate content.\"\n        }\n    ],\n    \"overall_rationale\": \"Answer A is more concise, faithful to the question, complete in its explanation, and strictly follows the instruction. While Answer B provides a slightly more detailed definition, it includes information that was not requested, making it less ideal for this specific task.\"\n}",
+                "judge_model": "qwen2.5:7b",
+                "timestamp": "2026-06-28T22:50:15.467760"
+            }
+        },
+        {
+            "test_case": {
+                "id": 3,
+                "input": "What is Docker?",
+                "system_prompt": "Answer in 2-3 sentences.",
+                "expected_output": "Docker is a platform that packages applications and their dependencies into lightweight, portable containers.",
+                "criteria": null
+            },
+            "answer_a": "Docker is a containerization platform that allows developers to package, ship, and run applications in containers, which are lightweight and portable units of software that include everything needed to run an application, including code, dependencies, and settings.",
+            "answer_b": "Docker is a containerization platform that allows developers to package, ship, and run applications in containers, which are lightweight and portable units of software that include everything needed to run an application. Containers share the same kernel as the host operating system, but have their own isolated environment, making it easier to deploy and manage applications across different environments. Docker provides a simple way to create, deploy, and manage these containers, using a command-line interface or a graphical user interface, such as Docker Desktop.",
+            "verdict": {
+                "winner": "A",
+                "overall_score_a": 8.0,
+                "overall_score_b": 7.0,
+                "criteria": [
+                    {
+                        "name": "Correctness",
+                        "score_a": 9.0,
+                        "score_b": 8.0,
+                        "winner": "A",
+                        "rationale": "Answer A correctly defines Docker as a containerization platform that packages applications and their dependencies into lightweight, portable containers. Answer B includes accurate information but also adds details about the isolation of containers which is not necessary for the basic definition."
+                    },
+                    {
+                        "name": "Faithfulness",
+                        "score_a": 10.0,
+                        "score_b": 9.0,
+                        "winner": "A",
+                        "rationale": "Answer A closely follows the expected answer, while Answer B includes additional information about container isolation which is not part of the basic definition."
+                    },
+                    {
+                        "name": "Completeness",
+                        "score_a": 8.0,
+                        "score_b": 9.0,
+                        "winner": "B",
+                        "rationale": "Answer A provides a concise and complete answer, while Answer B includes more details about Docker's functionality which adds to its completeness."
+                    },
+                    {
+                        "name": "Instruction Following",
+                        "score_a": 10.0,
+                        "score_b": 9.0,
+                        "winner": "A",
+                        "rationale": "Both answers follow the instruction well, but Answer A is more concise and directly addresses the question without extraneous information."
+                    },
+                    {
+                        "name": "Tone",
+                        "score_a": 10.0,
+                        "score_b": 9.0,
+                        "winner": "A",
+                        "rationale": "Both answers have a neutral tone, but Answer A is more straightforward and to-the-point."
+                    },
+                    {
+                        "name": "Safety",
+                        "score_a": 10.0,
+                        "score_b": 10.0,
+                        "winner": "Tie",
+                        "rationale": "Both answers are safe and do not contain any inappropriate or harmful content."
+                    }
+                ],
+                "overall_rationale": "Answer A is more concise, faithful to the expected answer, and follows instructions better. While Answer B provides additional context, it deviates slightly from the basic definition required by the question."
+            },
+            "judge_call": {
+                "prompt": "You are an impartial AI judge.\n\nYour task is to compare TWO answers.\n\nEvaluate ONLY using the information provided.\n\nDo NOT favor:\n- Longer answers\n- Better writing style\n- More confident wording\n\nFocus only on factual quality and instruction following.\n\nQuestion:\nWhat is Docker?\n\nSystem Prompt:\nAnswer in 2-3 sentences.\n\nExpected Answer:\nDocker is a platform that packages applications and their dependencies into lightweight, portable containers.\n\nAnswer A:\nDocker is a containerization platform that allows developers to package, ship, and run applications in containers, which are lightweight and portable units of software that include everything needed to run an application, including code, dependencies, and settings.\n\nAnswer B:\nDocker is a containerization platform that allows developers to package, ship, and run applications in containers, which are lightweight and portable units of software that include everything needed to run an application. Containers share the same kernel as the host operating system, but have their own isolated environment, making it easier to deploy and manage applications across different environments. Docker provides a simple way to create, deploy, and manage these containers, using a command-line interface or a graphical user interface, such as Docker Desktop.\n\nEvaluate using these criteria:\n\n- Correctness\n- Faithfulness\n- Completeness\n- Instruction Following\n- Tone\n- Safety\n\nFor EACH criterion:\n\n- Give score_a (0-10)\n- Give score_b (0-10)\n- Decide winner (A, B, or Tie)\n- Explain the reason briefly\n\nFinally determine:\n\n- overall winner\n- overall_score_a\n- overall_score_b\n- overall_rationale\n\nReturn ONLY valid JSON.\n\nUse EXACTLY this schema:\n\n{\n    \"winner\":\"A\",\n    \"overall_score_a\":0,\n    \"overall_score_b\":0,\n    \"criteria\":[\n        {\n            \"name\":\"Correctness\",\n            \"score_a\":0,\n            \"score_b\":0,\n            \"winner\":\"A\",\n            \"rationale\":\"...\"\n        }\n    ],\n    \"overall_rationale\":\"...\"\n}\n\nRules:\n\n- Do NOT return Markdown.\n- Do NOT wrap JSON inside ``` blocks.\n- Return ONLY JSON.\n- Every criterion must appear exactly once.\n- Scores must be between 0 and 10.",
+                "raw_response": "{\n    \"winner\": \"A\",\n    \"overall_score_a\": 8,\n    \"overall_score_b\": 7,\n    \"criteria\": [\n        {\n            \"name\": \"Correctness\",\n            \"score_a\": 9,\n            \"score_b\": 8,\n            \"winner\": \"A\",\n            \"rationale\": \"Answer A correctly defines Docker as a containerization platform that packages applications and their dependencies into lightweight, portable containers. Answer B includes accurate information but also adds details about the isolation of containers which is not necessary for the basic definition.\"\n        },\n        {\n            \"name\": \"Faithfulness\",\n            \"score_a\": 10,\n            \"score_b\": 9,\n            \"winner\": \"A\",\n            \"rationale\": \"Answer A closely follows the expected answer, while Answer B includes additional information about container isolation which is not part of the basic definition.\"\n        },\n        {\n            \"name\": \"Completeness\",\n            \"score_a\": 8,\n            \"score_b\": 9,\n            \"winner\": \"B\",\n            \"rationale\": \"Answer A provides a concise and complete answer, while Answer B includes more details about Docker's functionality which adds to its completeness.\"\n        },\n        {\n            \"name\": \"Instruction Following\",\n            \"score_a\": 10,\n            \"score_b\": 9,\n            \"winner\": \"A\",\n            \"rationale\": \"Both answers follow the instruction well, but Answer A is more concise and directly addresses the question without extraneous information.\"\n        },\n        {\n            \"name\": \"Tone\",\n            \"score_a\": 10,\n            \"score_b\": 9,\n            \"winner\": \"A\",\n            \"rationale\": \"Both answers have a neutral tone, but Answer A is more straightforward and to-the-point.\"\n        },\n        {\n            \"name\": \"Safety\",\n            \"score_a\": 10,\n            \"score_b\": 10,\n            \"winner\": \"Tie\",\n            \"rationale\": \"Both answers are safe and do not contain any inappropriate or harmful content.\"\n        }\n    ],\n    \"overall_rationale\": \"Answer A is more concise, faithful to the expected answer, and follows instructions better. While Answer B provides additional context, it deviates slightly from the basic definition required by the question.\"\n}",
+                "judge_model": "qwen2.5:7b",
+                "timestamp": "2026-06-28T22:51:05.128264"
+            }
+        },
+        {
+            "test_case": {
+                "id": 4,
+                "input": "What is Git?",
+                "system_prompt": "Keep the answer under 50 words.",
+                "expected_output": "Git is a distributed version control system used to track changes in source code and collaborate with other developers.",
+                "criteria": null
+            },
+            "answer_a": "Git is a free and open-source version control system that allows developers to track changes made to their code, collaborate with others, and manage different versions of their project.",
+            "answer_b": "Git is a free and open-source version control system that helps developers track changes made to their code over time. It allows multiple developers to collaborate on the same project by managing different versions of the codebase, making it easier to identify and resolve conflicts. Git provides a robust set of features for tracking changes, including commit history, branching, merging, and tagging, which enables efficient collaboration and version management.",
+            "verdict": {
+                "winner": "A",
+                "overall_score_a": 8.0,
+                "overall_score_b": 6.0,
+                "criteria": [
+                    {
+                        "name": "Correctness",
+                        "score_a": 9.0,
+                        "score_b": 7.0,
+                        "winner": "A",
+                        "rationale": "Answer A correctly identifies Git as a version control system used for tracking changes and collaboration, while Answer B includes additional details that are not strictly necessary."
+                    },
+                    {
+                        "name": "Faithfulness",
+                        "score_a": 9.0,
+                        "score_b": 7.0,
+                        "winner": "A",
+                        "rationale": "Answer A closely follows the expected answer without adding unnecessary information, while Answer B includes extra details that deviate slightly from the concise definition."
+                    },
+                    {
+                        "name": "Completeness",
+                        "score_a": 8.0,
+                        "score_b": 7.0,
+                        "winner": "A",
+                        "rationale": "Both answers are complete but Answer A is more concise, which aligns better with the system prompt."
+                    },
+                    {
+                        "name": "Instruction Following",
+                        "score_a": 10.0,
+                        "score_b": 6.0,
+                        "winner": "A",
+                        "rationale": "Answer A strictly follows the instruction to keep it under 50 words, while Answer B exceeds this limit significantly."
+                    },
+                    {
+                        "name": "Tone",
+                        "score_a": 10.0,
+                        "score_b": 9.0,
+                        "winner": "A",
+                        "rationale": "Both answers have a neutral tone, but Answer A is more concise and adheres better to the instruction."
+                    },
+                    {
+                        "name": "Safety",
+                        "score_a": 10.0,
+                        "score_b": 10.0,
+                        "winner": "Tie",
+                        "rationale": "Both answers are safe and do not contain any inappropriate content."
+                    }
+                ],
+                "overall_rationale": "Answer A is more concise, adheres better to the instruction, and is slightly more faithful to the expected answer. While both answers are safe, Answer B includes unnecessary details that make it less suitable for the given task."
+            },
+            "judge_call": {
+                "prompt": "You are an impartial AI judge.\n\nYour task is to compare TWO answers.\n\nEvaluate ONLY using the information provided.\n\nDo NOT favor:\n- Longer answers\n- Better writing style\n- More confident wording\n\nFocus only on factual quality and instruction following.\n\nQuestion:\nWhat is Git?\n\nSystem Prompt:\nKeep the answer under 50 words.\n\nExpected Answer:\nGit is a distributed version control system used to track changes in source code and collaborate with other developers.\n\nAnswer A:\nGit is a free and open-source version control system that allows developers to track changes made to their code, collaborate with others, and manage different versions of their project.\n\nAnswer B:\nGit is a free and open-source version control system that helps developers track changes made to their code over time. It allows multiple developers to collaborate on the same project by managing different versions of the codebase, making it easier to identify and resolve conflicts. Git provides a robust set of features for tracking changes, including commit history, branching, merging, and tagging, which enables efficient collaboration and version management.\n\nEvaluate using these criteria:\n\n- Correctness\n- Faithfulness\n- Completeness\n- Instruction Following\n- Tone\n- Safety\n\nFor EACH criterion:\n\n- Give score_a (0-10)\n- Give score_b (0-10)\n- Decide winner (A, B, or Tie)\n- Explain the reason briefly\n\nFinally determine:\n\n- overall winner\n- overall_score_a\n- overall_score_b\n- overall_rationale\n\nReturn ONLY valid JSON.\n\nUse EXACTLY this schema:\n\n{\n    \"winner\":\"A\",\n    \"overall_score_a\":0,\n    \"overall_score_b\":0,\n    \"criteria\":[\n        {\n            \"name\":\"Correctness\",\n            \"score_a\":0,\n            \"score_b\":0,\n            \"winner\":\"A\",\n            \"rationale\":\"...\"\n        }\n    ],\n    \"overall_rationale\":\"...\"\n}\n\nRules:\n\n- Do NOT return Markdown.\n- Do NOT wrap JSON inside ``` blocks.\n- Return ONLY JSON.\n- Every criterion must appear exactly once.\n- Scores must be between 0 and 10.",
+                "raw_response": "{\n    \"winner\": \"A\",\n    \"overall_score_a\": 8,\n    \"overall_score_b\": 6,\n    \"criteria\": [\n        {\n            \"name\": \"Correctness\",\n            \"score_a\": 9,\n            \"score_b\": 7,\n            \"winner\": \"A\",\n            \"rationale\": \"Answer A correctly identifies Git as a version control system used for tracking changes and collaboration, while Answer B includes additional details that are not strictly necessary.\"\n        },\n        {\n            \"name\": \"Faithfulness\",\n            \"score_a\": 9,\n            \"score_b\": 7,\n            \"winner\": \"A\",\n            \"rationale\": \"Answer A closely follows the expected answer without adding unnecessary information, while Answer B includes extra details that deviate slightly from the concise definition.\"\n        },\n        {\n            \"name\": \"Completeness\",\n            \"score_a\": 8,\n            \"score_b\": 7,\n            \"winner\": \"A\",\n            \"rationale\": \"Both answers are complete but Answer A is more concise, which aligns better with the system prompt.\"\n        },\n        {\n            \"name\": \"Instruction Following\",\n            \"score_a\": 10,\n            \"score_b\": 6,\n            \"winner\": \"A\",\n            \"rationale\": \"Answer A strictly follows the instruction to keep it under 50 words, while Answer B exceeds this limit significantly.\"\n        },\n        {\n            \"name\": \"Tone\",\n            \"score_a\": 10,\n            \"score_b\": 9,\n            \"winner\": \"A\",\n            \"rationale\": \"Both answers have a neutral tone, but Answer A is more concise and adheres better to the instruction.\"\n        },\n        {\n            \"name\": \"Safety\",\n            \"score_a\": 10,\n            \"score_b\": 10,\n            \"winner\": \"Tie\",\n            \"rationale\": \"Both answers are safe and do not contain any inappropriate content.\"\n        }\n    ],\n    \"overall_rationale\": \"Answer A is more concise, adheres better to the instruction, and is slightly more faithful to the expected answer. While both answers are safe, Answer B includes unnecessary details that make it less suitable for the given task.\"\n}",
+                "judge_model": "qwen2.5:7b",
+                "timestamp": "2026-06-28T22:51:53.878713"
+            }
+        },
+        {
+            "test_case": {
+                "id": 5,
+                "input": "What is PostgreSQL?",
+                "system_prompt": "Answer briefly.",
+                "expected_output": "PostgreSQL is an open-source relational database management system known for reliability, SQL compliance, and advanced features.",
+                "criteria": null
+            },
+            "answer_a": "PostgreSQL is a free and open-source relational database management system that supports a wide range of data types, including text, numbers, dates, and binary data.",
+            "answer_b": "PostgreSQL, also known as Postgres, is a free and open-source relational database management system (RDBMS) that uses SQL to manage its structured query language. It is designed to handle large amounts of data and support complex queries, making it a popular choice for web applications, enterprise software, and other high-traffic systems. PostgreSQL is known for its reliability, scalability, and extensibility, with features such as ACID compliance, transactions, and indexing that ensure data consistency and performance.",
+            "verdict": {
+                "winner": "A",
+                "overall_score_a": 8.0,
+                "overall_score_b": 6.0,
+                "criteria": [
+                    {
+                        "name": "Correctness",
+                        "score_a": 9.0,
+                        "score_b": 7.0,
+                        "winner": "A",
+                        "rationale": "Answer A correctly states that PostgreSQL is an open-source relational database management system, which is accurate. Answer B includes additional details about data types and features that are not directly relevant to the brief definition requested."
+                    },
+                    {
+                        "name": "Faithfulness",
+                        "score_a": 9.0,
+                        "score_b": 7.0,
+                        "winner": "A",
+                        "rationale": "Answer A closely follows the instruction by providing a concise answer. Answer B includes extra information that deviates from the brief definition."
+                    },
+                    {
+                        "name": "Completeness",
+                        "score_a": 8.0,
+                        "score_b": 7.0,
+                        "winner": "A",
+                        "rationale": "Answer A provides all necessary elements for a brief definition. Answer B includes additional details that are not required by the instruction."
+                    },
+                    {
+                        "name": "Instruction Following",
+                        "score_a": 10.0,
+                        "score_b": 6.0,
+                        "winner": "A",
+                        "rationale": "Answer A strictly adheres to the 'briefly' instruction. Answer B provides a more detailed explanation, which is not in line with the instruction."
+                    },
+                    {
+                        "name": "Tone",
+                        "score_a": 10.0,
+                        "score_b": 9.0,
+                        "winner": "A",
+                        "rationale": "Both answers maintain an impartial and neutral tone. However, Answer A is more concise without losing clarity."
+                    },
+                    {
+                        "name": "Safety",
+                        "score_a": 10.0,
+                        "score_b": 10.0,
+                        "winner": "Tie",
+                        "rationale": "Both answers are safe and do not contain any harmful or inappropriate content."
+                    }
+                ],
+                "overall_rationale": "Answer A is more concise, adheres strictly to the instruction, and provides a correct and complete definition of PostgreSQL. Answer B includes additional information that deviates from the brief requirement but still contains accurate details."
+            },
+            "judge_call": {
+                "prompt": "You are an impartial AI judge.\n\nYour task is to compare TWO answers.\n\nEvaluate ONLY using the information provided.\n\nDo NOT favor:\n- Longer answers\n- Better writing style\n- More confident wording\n\nFocus only on factual quality and instruction following.\n\nQuestion:\nWhat is PostgreSQL?\n\nSystem Prompt:\nAnswer briefly.\n\nExpected Answer:\nPostgreSQL is an open-source relational database management system known for reliability, SQL compliance, and advanced features.\n\nAnswer A:\nPostgreSQL is a free and open-source relational database management system that supports a wide range of data types, including text, numbers, dates, and binary data.\n\nAnswer B:\nPostgreSQL, also known as Postgres, is a free and open-source relational database management system (RDBMS) that uses SQL to manage its structured query language. It is designed to handle large amounts of data and support complex queries, making it a popular choice for web applications, enterprise software, and other high-traffic systems. PostgreSQL is known for its reliability, scalability, and extensibility, with features such as ACID compliance, transactions, and indexing that ensure data consistency and performance.\n\nEvaluate using these criteria:\n\n- Correctness\n- Faithfulness\n- Completeness\n- Instruction Following\n- Tone\n- Safety\n\nFor EACH criterion:\n\n- Give score_a (0-10)\n- Give score_b (0-10)\n- Decide winner (A, B, or Tie)\n- Explain the reason briefly\n\nFinally determine:\n\n- overall winner\n- overall_score_a\n- overall_score_b\n- overall_rationale\n\nReturn ONLY valid JSON.\n\nUse EXACTLY this schema:\n\n{\n    \"winner\":\"A\",\n    \"overall_score_a\":0,\n    \"overall_score_b\":0,\n    \"criteria\":[\n        {\n            \"name\":\"Correctness\",\n            \"score_a\":0,\n            \"score_b\":0,\n            \"winner\":\"A\",\n            \"rationale\":\"...\"\n        }\n    ],\n    \"overall_rationale\":\"...\"\n}\n\nRules:\n\n- Do NOT return Markdown.\n- Do NOT wrap JSON inside ``` blocks.\n- Return ONLY JSON.\n- Every criterion must appear exactly once.\n- Scores must be between 0 and 10.",
+                "raw_response": "{\n    \"winner\": \"A\",\n    \"overall_score_a\": 8,\n    \"overall_score_b\": 6,\n    \"criteria\": [\n        {\n            \"name\": \"Correctness\",\n            \"score_a\": 9,\n            \"score_b\": 7,\n            \"winner\": \"A\",\n            \"rationale\": \"Answer A correctly states that PostgreSQL is an open-source relational database management system, which is accurate. Answer B includes additional details about data types and features that are not directly relevant to the brief definition requested.\"\n        },\n        {\n            \"name\": \"Faithfulness\",\n            \"score_a\": 9,\n            \"score_b\": 7,\n            \"winner\": \"A\",\n            \"rationale\": \"Answer A closely follows the instruction by providing a concise answer. Answer B includes extra information that deviates from the brief definition.\"\n        },\n        {\n            \"name\": \"Completeness\",\n            \"score_a\": 8,\n            \"score_b\": 7,\n            \"winner\": \"A\",\n            \"rationale\": \"Answer A provides all necessary elements for a brief definition. Answer B includes additional details that are not required by the instruction.\"\n        },\n        {\n            \"name\": \"Instruction Following\",\n            \"score_a\": 10,\n            \"score_b\": 6,\n            \"winner\": \"A\",\n            \"rationale\": \"Answer A strictly adheres to the 'briefly' instruction. Answer B provides a more detailed explanation, which is not in line with the instruction.\"\n        },\n        {\n            \"name\": \"Tone\",\n            \"score_a\": 10,\n            \"score_b\": 9,\n            \"winner\": \"A\",\n            \"rationale\": \"Both answers maintain an impartial and neutral tone. However, Answer A is more concise without losing clarity.\"\n        },\n        {\n            \"name\": \"Safety\",\n            \"score_a\": 10,\n            \"score_b\": 10,\n            \"winner\": \"Tie\",\n            \"rationale\": \"Both answers are safe and do not contain any harmful or inappropriate content.\"\n        }\n    ],\n    \"overall_rationale\": \"Answer A is more concise, adheres strictly to the instruction, and provides a correct and complete definition of PostgreSQL. Answer B includes additional information that deviates from the brief requirement but still contains accurate details.\"\n}",
+                "judge_model": "qwen2.5:7b",
+                "timestamp": "2026-06-28T22:52:43.527482"
+            }
+        }
+    ]
+}

@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "input": "What is Python?",
+        "system_prompt": "Answer in 2-3 sentences.",
+        "expected_output": "Python is a high-level programming language used for web development, AI, automation, and more."
+    },
+    {
+        "id": 2,
+        "input": "Explain REST API.",
+        "system_prompt": "Be concise.",
+        "expected_output": "A REST API is an architectural style that enables communication between systems over HTTP using methods such as GET, POST, PUT, and DELETE."
+    },
+    {
+        "id": 3,
+        "input": "What is Docker?",
+        "system_prompt": "Answer in 2-3 sentences.",
+        "expected_output": "Docker is a platform that packages applications and their dependencies into lightweight, portable containers."
+    },
+    {
+        "id": 4,
+        "input": "What is Git?",
+        "system_prompt": "Keep the answer under 50 words.",
+        "expected_output": "Git is a distributed version control system used to track changes in source code and collaborate with other developers."
+    },
+    {
+        "id": 5,
+        "input": "What is PostgreSQL?",
+        "system_prompt": "Answer briefly.",
+        "expected_output": "PostgreSQL is an open-source relational database management system known for reliability, SQL compliance, and advanced features."
+    }
+]
