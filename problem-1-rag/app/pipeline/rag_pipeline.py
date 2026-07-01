@@ -21,7 +21,9 @@ class RAGPipeline:
         question: str,
     ):
 
-        chunks = self.retriever.retrieve(question)
+        chunks, retrieval_latency = (
+            self.retriever.retrieve(question)
+        )
 
         context = self.context_builder.build(chunks)
 
@@ -46,6 +48,7 @@ class RAGPipeline:
             "context": context,
             "prompt": prompt,
             "latency": response.latency,
+            "retrieval_latency": retrieval_latency,
             "runtime_metrics": {
 
                 "avg_similarity": RuntimeMetrics.average_similarity(chunks),

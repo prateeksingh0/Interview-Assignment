@@ -1,4 +1,5 @@
 from config import settings
+import time
 
 from typing import List
 from app.embeddings.embedder import Embedder
@@ -30,9 +31,15 @@ class Retriever:
             question
         )
 
+        start = time.perf_counter()
+
         results = self.store.search(
             query_vector,
             top_k,
+        )
+
+        retrieval_latency = (
+            time.perf_counter() - start
         )
 
         retrieved = []
@@ -61,4 +68,7 @@ class Retriever:
 
         retrieved.sort(key=lambda chunk: chunk.distance)
 
-        return retrieved
+        return (
+            retrieved,
+            retrieval_latency,
+        )

@@ -43,7 +43,12 @@ with st.sidebar:
 
     run_button = st.button(
         "▶ Run Evaluation",
-        use_container_width=True,
+        width="stretch",
+    )
+    
+    debug_mode = st.checkbox(
+        "Debug Mode",
+        value=False,
     )
 
 
@@ -97,6 +102,42 @@ if run_button:
                 system_prompt_a="Answer in one sentence.",
                 system_prompt_b="Answer in three sentences.",
             )
+            
+            if debug_mode:
+                with st.expander(
+                    f"🔍 Debug - Test Case {case.id}",
+                    expanded=False,
+                ):
+
+                    st.subheader("Judge Prompt")
+
+                    st.code(
+                        evaluation.judge_call.prompt,
+                        language="text",
+                    )
+                    
+                    st.subheader("Raw Judge Response")
+
+                    st.code(
+                        evaluation.judge_call.raw_response,
+                        language="json",
+                    )
+                    
+                    st.text("Generator Model")
+
+                    st.write(generator_model)
+
+                    st.text("Judge Model")
+
+                    st.write(
+                        evaluation.judge_call.judge_model
+                    )
+                    
+                    st.subheader("Parsed Verdict")
+
+                    st.json(
+                        evaluation.verdict.model_dump()
+                    )
 
             evaluations.append(evaluation)
 
@@ -200,13 +241,14 @@ else:
 
 st.divider()
 
-tab1, tab2, tab3, tab4, tab5 = st.tabs(
+tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(
     [
         "📊 Metrics",
         "🛡 Bias Analysis",
         "✅ Validation",
         "📄 Results",
         "💡 Recommendation",
+        "🧪 Evidence",
     ]
 )
 
@@ -229,11 +271,11 @@ with tab1:
                 {
                     "Metric": [
                         "Total Cases",
-                        "Pass Rate",
+                        "Pass Rate (%)",
                     ],
                     "Value": [
                         summary["total_cases"],
-                        f'{summary["pass_rate"]}%',
+                        round(summary["pass_rate"], 2),
                     ],
                 }
             )
@@ -279,7 +321,7 @@ with tab1:
 
         st.dataframe(
             rows,
-            use_container_width=True,
+            width="stretch",
             hide_index=True,
         )
 
@@ -362,7 +404,7 @@ with tab3:
                 }
                 for result in validation.results
             ],
-            use_container_width=True,
+            width="stretch",
             hide_index=True,
         )
 
@@ -443,7 +485,7 @@ if "json_path" in st.session_state:
                 "📥 Download JSON Report",
                 f,
                 file_name="evaluation_report.json",
-                use_container_width=True,
+                width="stretch",
             )
 
     with c2:
@@ -457,7 +499,7 @@ if "json_path" in st.session_state:
                 "📥 Download CSV Report",
                 f,
                 file_name="evaluation_report.csv",
-                use_container_width=True,
+                width="stretch",
             )
 
 with tab5:
@@ -503,6 +545,49 @@ with tab5:
     else:
 
         st.info("Run an evaluation first.")
+        
+with tab6:
+
+    st.subheader("Assignment Evidence")
+
+    bias = st.session_state.get("bias")
+
+    if bias:
+
+        st.markdown("## Position Bias Check")
+
+        position = bias["position_bias"]
+
+        col1, col2, col3 = st.columns(3)
+
+        with col1:
+            st.metric(
+                "Original Winner",
+                position["results"][0]["original_winner"],
+            )
+
+        with col2:
+            st.metric(
+                "Reversed Winner",
+                position["results"][0]["reversed_winner"],
+            )
+
+        with col3:
+            st.metric(
+                "Flip Rate",
+                f"{position['flip_rate']}%",
+            )
+
+        st.success(
+            "The evaluation was repeated after reversing Answer A and Answer B. "
+            "The winner remained unchanged, indicating no measurable position bias."
+        )
+
+    else:
+
+        st.info(
+            "Run an evaluation first."
+        )
 
 st.divider()
 

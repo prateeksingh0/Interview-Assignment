@@ -1,10 +1,11 @@
 import json
 from dataclasses import dataclass
-from statistics import mean
+import math
+from statistics import mean, median
 
 from app.pipeline.rag_pipeline import RAGPipeline
 
-from .datasets import EVALUATION_DATASET
+from .benchmark_dataset import EVALUATION_DATASET
 from .retrieval_metrics import RetrievalMetrics
 from .generation_metrics import GenerationMetrics
 
@@ -31,6 +32,12 @@ class BenchmarkResult:
     answer_relevance: float
 
     context_precision: float
+
+    exact_match: float
+
+    f1: float
+
+    retrieval_latency: float
 
     latency: float
 
@@ -61,6 +68,8 @@ class Benchmark:
                 answer=response["answer"],
 
                 context=response["context"],
+
+                expected_answer=sample.expected_answer,
             )
 
             retrieved_chunks = [
@@ -106,6 +115,14 @@ class Benchmark:
                     answer_relevance=generation.answer_relevance,
 
                     context_precision=generation.context_precision,
+                    
+                    exact_match=generation.exact_match,
+
+                    f1=generation.f1,
+                    
+                    retrieval_latency=response[
+                        "retrieval_latency"
+                    ],
 
                     latency=response["latency"],
                 )
@@ -116,6 +133,37 @@ class Benchmark:
 
     @staticmethod
     def summary(results):
+        
+        latencies = sorted(
+            r.latency
+            for r in results
+        )
+        
+        retrieval_latencies = sorted(
+
+            r.retrieval_latency
+
+            for r in results
+
+        )
+        
+        retrieval_p50 = median(
+            retrieval_latencies
+        )
+
+        retrieval_p95 = retrieval_latencies[
+            math.ceil(
+                0.95 * len(retrieval_latencies)
+            ) - 1
+        ]
+
+        p50 = median(latencies)
+
+        index = math.ceil(
+            0.95 * len(latencies)
+        ) - 1
+
+        p95 = latencies[index]
 
         return {
 
@@ -153,11 +201,26 @@ class Benchmark:
                 r.context_precision
                 for r in results
             ),
-
-            "Latency": mean(
-                r.latency
+            
+            "Exact Match": mean(
+                r.exact_match
                 for r in results
             ),
+
+            "F1": mean(
+                r.f1
+                for r in results
+            ),
+
+            "Average Latency": mean(latencies),
+
+            "Latency P50": p50,
+
+            "Latency P95": p95,
+            
+            "Retrieval Latency P50": retrieval_p50,
+
+            "Retrieval Latency P95": retrieval_p95,
 
             "Questions": len(results),
 
@@ -249,6 +312,14 @@ class Benchmark:
 
                 file.write(
                     f"- Context Precision: {result.context_precision}\n"
+                )
+                
+                file.write(
+                    f"- Exact Match: {result.exact_match}\n"
+                )
+
+                file.write(
+                    f"- F1: {result.f1}\n"
                 )
 
                 file.write(

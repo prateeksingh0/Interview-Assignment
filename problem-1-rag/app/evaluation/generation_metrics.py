@@ -4,12 +4,11 @@ import re
 
 @dataclass
 class GenerationMetricsResult:
-
     faithfulness: float
-
     answer_relevance: float
-
     context_precision: float
+    exact_match: float
+    f1: float
 
 
 class GenerationMetrics:
@@ -118,6 +117,7 @@ class GenerationMetrics:
         question,
         answer,
         context,
+        expected_answer,
     ):
 
         return GenerationMetricsResult(
@@ -136,4 +136,74 @@ class GenerationMetrics:
                 answer,
                 context,
             ),
+
+            exact_match=cls.exact_match(
+                expected_answer,
+                answer,
+            ),
+
+            f1=cls.f1_score(
+                expected_answer,
+                answer,
+            ),
+        )
+        
+    @staticmethod
+    def _tokens(text: str):
+
+        return re.findall(
+            r"\w+",
+            text.lower(),
+        )
+        
+    @classmethod
+    def exact_match(
+        cls,
+        expected: str,
+        predicted: str,
+    ) -> float:
+
+        expected = " ".join(
+            cls._tokens(expected)
+        )
+
+        predicted = " ".join(
+            cls._tokens(predicted)
+        )
+
+        return float(
+            expected == predicted
+        )
+        
+    @classmethod
+    def f1_score(
+        cls,
+        expected: str,
+        predicted: str,
+    ) -> float:
+
+        expected_tokens = cls._tokens(expected)
+
+        predicted_tokens = cls._tokens(predicted)
+
+        if not expected_tokens or not predicted_tokens:
+            return 0.0
+
+        expected_set = set(expected_tokens)
+
+        predicted_set = set(predicted_tokens)
+
+        common = expected_set & predicted_set
+
+        if not common:
+            return 0.0
+
+        precision = len(common) / len(predicted_set)
+
+        recall = len(common) / len(expected_set)
+
+        return (
+            2 * precision * recall
+        ) / (
+            precision + recall
         )
